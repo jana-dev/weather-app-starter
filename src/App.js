@@ -41,6 +41,7 @@ const App = () => {
     //Realiza uma requisição GET para a URL construída utilizando o Axios. Quando a resposta for recebida com sucesso, os dados da resposta são extraídos e armazenados no estado data 
     axios.get(url).then(res => {
       setData(res.data);
+      console.log(data)
     })
   }, [location])
 
