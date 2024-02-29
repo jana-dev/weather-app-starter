@@ -101,7 +101,7 @@ const App = () => {
     case 'Clouds':
       icon = <IoMdCloudy  className='text-[#ffffff]'/>;
       break;
-    case 'Haze':
+    case 'Mist':
       icon = <BsCloudHaze2Fill  className='text-[#ffffff]'/>;
       break;
     case 'Rain':
@@ -126,7 +126,7 @@ const App = () => {
 
   return (
     <div className='w-full h-screen bg-gradientBg bg-no-repeat bg-cover bg-center flex gap-4 flex-col items-center justify-center px-4 lg:px-0'>
-      {errorMsg && <div className='w-full max-w-[450px] text-center text-white absolute p-2 top-10 capitalize rounded-md'>{`${errorMsg.response.data.message}`}</div>}
+      {errorMsg && <div className='w-full max-w-[450px] text-center text-white absolute p-2 top-0 lg:top-10 capitalize  bg-[#ea5252] animate-shake'>{`${errorMsg.response.data.message}`}</div>}
       {/* form */}
       <form
         className={`
@@ -179,20 +179,20 @@ const App = () => {
                 </div>
               </div>
               {/* card bottom */}
-              <div className='max-w-[378px] mx-auto flex flex-col gap-y-6'>
-                <div className='flex justify-between'>
-                  <div className='flex items-center gap-x-2'>
+              <div className='max-w-[378px] mx-auto grid sm:flex sm:flex-col gap-y-4'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 justify-center'>
+                  <div className='flex items-center gap-x-2 justify-center'>
                     {/* icon */}
-                    <div className='text-[20px]'>
+                    <div className='text-[16px]'>
                       <BsEye />
                     </div>
                     <div>
                       Visibilidade <span className='ml-2'>{data.visibility / 1000} km</span>
                     </div>
                   </div>
-                  <div className='flex items-center gap-x-2'>
+                  <div className='flex items-center gap-x-2 justify-center'>
                     {/* icon */}
-                    <div className='text-[20px]'>
+                    <div className='text-[16px]'>
                       <BsThermometer />
                     </div>
                     <div className='flex'>
@@ -204,19 +204,19 @@ const App = () => {
                     </div>
                   </div>
                 </div>
-                <div className='flex justify-between'>
-                  <div className='flex items-center gap-x-2'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 justify-center gap-4'>
+                  <div className='flex items-center gap-x-2 justify-center'>
                     {/* icon */}
-                    <div className='text-[20px]'>
+                    <div className='text-[16px]'>
                       <BsWater />
                     </div>
                     <div>
                       Umidade <span className='ml-2'>{data.main.humidity} %</span>
                     </div>
                   </div>
-                  <div className='flex items-center gap-x-2'>
+                  <div className='flex items-center gap-x-2 justify-center'>
                     {/* icon */}
-                    <div className='text-[20px]'>
+                    <div className='text-[16px]'>
                       <BsWind />
                     </div>
                     <div className='flex'>
